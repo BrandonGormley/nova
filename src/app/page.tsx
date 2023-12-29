@@ -5,7 +5,7 @@ export default function Home() {
     return (
         <main>
             <Hero />
-            <section className='p-8 flex flex-wrap justify-center mx-auto'>
+            <section className='p-8 flex flex-wrap justify-center mx-auto max-w-[1440px]'>
                 <BlogPost />
                 <BlogPost />
                 <BlogPost />
