@@ -11,15 +11,30 @@ export default function Header() {
                 alt='Company  Logo'
             />
             <nav className='flex ml-4 w-full max-w-[150px] text-sm'>
-                <ul className='flex flex-row items-center justify-between w-full'>
+                <ul className='flex flex-row items-center justify-between w-full font-medium'>
                     <li>
-                        <Link href='/blog'>Blog</Link>
+                        <Link
+                            className='hover:underline underline-offset-4'
+                            href='/blog'
+                        >
+                            Blog
+                        </Link>
                     </li>
                     <li>
-                        <Link href='/about'>About</Link>
+                        <Link
+                            className='hover:underline underline-offset-4'
+                            href='/about'
+                        >
+                            About
+                        </Link>
                     </li>
                     <li>
-                        <Link href='/contact'>Contact</Link>
+                        <Link
+                            className='hover:underline underline-offset-4'
+                            href='/contact'
+                        >
+                            Contact
+                        </Link>
                     </li>
                 </ul>
             </nav>
