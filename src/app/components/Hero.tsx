@@ -12,7 +12,7 @@ export default function Hero() {
                     articles and stories.
                 </p>
                 <Link
-                    className='bg-black text-white rounded-lg px-12 py-3 block text-center md:inline hover:bg-slate-600 transition-all'
+                    className='bg-slate-900 text-white rounded-lg px-6 py-3 block text-center md:inline hover:bg-slate-800 transition-all'
                     href='/'
                 >
                     Explore Now
