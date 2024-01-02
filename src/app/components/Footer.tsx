@@ -5,24 +5,33 @@ export default function Footer() {
         <footer className='w-full py-6 border-t mx-auto max-w-[1440px] flex justify-center'>
             <div className='container px-4 md:px-6 flex items-center justify-between'>
                 <div className='flex gap-4'>
-                    <Link href='#'>
-                        <FacebookIcon className='w-4 h-4 hover:text-[#1877F2]' />
-                    </Link>
-                    <Link href='#'>
+                    <a
+                        href='https://twitter.com/BrandonGormley'
+                        target='_blank'
+                    >
                         <TwitterIcon className='w-4 h-4 hover:text-[#1DA1F2]' />
-                    </Link>
-                    <Link href='#'>
+                    </a>
+                    <a
+                        target='_blank'
+                        href='https://www.instagram.com/brandongormley/'
+                    >
                         <InstagramIcon className='w-4 h-4 hover:text-[#962fbf]' />
-                    </Link>
-                    <Link href='#'>
+                    </a>
+                    <a
+                        target='_blank'
+                        href='https://www.linkedin.com/in/brandontgormley/'
+                    >
                         <LinkedinIcon className='w-4 h-4 hover:text-[#0077b5]' />
-                    </Link>
-                    <Link href='#'>
+                    </a>
+                    <a
+                        target='_blank'
+                        href='https://www.youtube.com/channel/UCOtIOhA9Y0a36ah9UUZ6RCw'
+                    >
                         <YoutubeIcon className='w-4 h-4 hover:text-[#CD201F]' />
-                    </Link>
-                    <Link href='#'>
+                    </a>
+                    <a target='_blank' href='https://github.com/BrandonGormley'>
                         <GithubIcon className='w-4 h-4 hover:text-gray-700' />
-                    </Link>
+                    </a>
                 </div>
                 <p className='text-xs text-gray-500 dark:text-gray-400'>
                     © Nova. All rights reserved.
@@ -43,25 +52,6 @@ export default function Footer() {
                 </nav>
             </div>
         </footer>
-    );
-}
-
-function FacebookIcon(props: any) {
-    return (
-        <svg
-            {...props}
-            xmlns='http://www.w3.org/2000/svg'
-            width='24'
-            height='24'
-            viewBox='0 0 24 24'
-            fill='none'
-            stroke='currentColor'
-            strokeWidth='2'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-        >
-            <path d='M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z' />
-        </svg>
     );
 }
 
