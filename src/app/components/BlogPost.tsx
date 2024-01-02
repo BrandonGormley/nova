@@ -1,8 +1,8 @@
 export default function BlogPost() {
     return (
-        <div className='border border-slate-100 shadow-md rounded-md w-full md:max-w-[50%] lg:max-w-[25%] m-4'>
+        <div className='border border-slate-100 shadow-md rounded-md w-full md:max-w-[45%] lg:max-w-[25%] m-4'>
             <div className='p-6 flex flex-col'>
-                <div className='flex justify-between text-slate-400 text-sm'>
+                <div className='flex justify-between text-slate-400 text-sm md:text-xs xl:text-sm'>
                     <p>Blog Post 1</p>
                     <p>December 28th, 2023</p>
                 </div>
