@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Hero() {
     return (
-        <section className='w-full mx-auto px-8 container mt-32'>
+        <section className='w-full mx-auto px-8 max-w-[1440px] mt-32'>
             <div className='lg:py-16 '>
                 <h1 className='text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl xl:text-6xl  '>
                     Welcome to Nova
