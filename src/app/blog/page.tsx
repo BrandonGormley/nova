@@ -1,4 +1,4 @@
-import BlogPost from '../ui/components/BlogPost';
+import BlogPost from '../components/ui/BlogPost';
 
 export default function Blog() {
     return (

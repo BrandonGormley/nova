@@ -1,5 +1,5 @@
-import BlogPost from './ui/components/BlogPost';
-import Hero from './ui/components/Hero';
+import Hero from './components/Hero';
+import BlogPost from './components/ui/BlogPost';
 
 export default function Home() {
     return (
