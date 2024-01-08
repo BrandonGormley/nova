@@ -13,7 +13,7 @@ export default function Hero() {
                 </p>
                 <Link
                     className='bg-slate-900 text-white rounded-lg px-6 py-3 block text-center md:inline hover:bg-slate-800 transition-all'
-                    href='/'
+                    href='/blog'
                 >
                     Explore Now
                 </Link>
