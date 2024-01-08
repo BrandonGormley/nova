@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function About() {
     return (
-        <main className='p-8'>
+        <main className='p-8 min-h-screen'>
             <section className='px-4 py-6 md:px-6 lg:py-16 md:py-12 max-w-[1440px] mx-auto'>
                 <div className='w-full max-w-[768px] mx-auto'>
                     <h1 className='text-4xl font-extrabold tracking-tight lg:text-5xl lg:leading-[3.5rem]'>
@@ -34,8 +34,9 @@ export default function About() {
                     </figure>
                     <h2 className='text-2xl font-bold'>Contact</h2>
                     <p className='my-8 text-gray-700'>
-                        You can reach me via email at johndoe@example.com or
-                        follow me on Twitter @johndoe.
+                        You can reach me via email at
+                        brandontgormley@gmail.com.com or follow me on Twitter
+                        @brandongormley.
                     </p>
                     <h2 className='text-2xl font-bold'>Fun Facts About Me</h2>
                     <ul className='my-8 list-inside list-disc'>
