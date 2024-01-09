@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function BlogPost() {
     return (
         <div className='border border-slate-100 shadow-md rounded-md w-full md:max-w-[45%] lg:max-w-[25%] m-4'>
@@ -8,11 +10,17 @@ export default function BlogPost() {
                 </div>
                 <div className='py-4 text-slate-600'>
                     <p className='font-bold'>End of 2023</p>
-                    <p className='text-sm text-slate-500'>
+                    <p className='text-sm text-slate-500 mb-2'>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Sunt consectetur odit quibusdam incidunt eveniet
                         perferendis expedita pariatur vero numquam quam?
                     </p>
+                    <Link
+                        className='text-xs text-slate-400 hover:text-slate-500 transition-all'
+                        href='/blog/1'
+                    >
+                        Read More...
+                    </Link>
                 </div>
             </div>
         </div>
