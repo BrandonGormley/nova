@@ -5,15 +5,18 @@ export interface BlogPost {
     title: string;
     body: string;
     date: string;
+    recent: string;
 }
 
 async function getData() {
-    const res = await fetch('http://localhost:4000/blogposts', {
+    const res = await fetch('https://nova-bg.vercel.app/api/blogposts', {
         next: {
             revalidate: 0,
         },
     });
-    return res.json();
+    const data = await res.json();
+    const blogposts = data.blogposts;
+    return blogposts;
 }
 
 export default async function BlogPostList() {
