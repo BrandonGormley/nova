@@ -17,7 +17,7 @@ export default function BlogPost({ id, title, body, date }: BlogPostProps) {
             <div className='py-4 text-slate-600'>
                 <p className='font-bold'>{title}</p>
                 <p className='text-sm text-slate-500 mb-2'>
-                    {body.slice(0, 200)}
+                    {body.slice(0, 200)}...
                 </p>
                 <Link
                     className='text-xs text-slate-400 hover:text-slate-500 transition-all'
