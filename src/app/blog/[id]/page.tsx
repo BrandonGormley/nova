@@ -11,6 +11,16 @@ export interface BlogPost {
     date: string;
 }
 
+export async function generateStaticParams() {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/blogposts`);
+    const data = await res.json();
+    const blogposts = data.blogposts;
+
+    return blogposts.map((blogpost: BlogPost) => ({
+        id: blogpost.id,
+    }));
+}
+
 async function getData(id: string) {
     const res = await fetch(
         `${process.env.NEXT_PUBLIC_API}/api/blogposts/${id}`,
