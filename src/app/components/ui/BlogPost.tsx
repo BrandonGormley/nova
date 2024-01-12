@@ -5,11 +5,23 @@ interface BlogPostProps {
     title: string;
     body: string;
     date: string;
+    recent: string;
 }
 
-export default function BlogPost({ id, title, body, date }: BlogPostProps) {
+export default function BlogPost({
+    id,
+    title,
+    body,
+    date,
+    recent,
+}: BlogPostProps) {
     return (
-        <div className='p-6 flex flex-col'>
+        <div className='p-6 flex flex-col relative'>
+            {recent === 'true' && (
+                <p className='bg-green-200 absolute top-1 left-1 px-2 text-xs rounded border border-green-300 shadow'>
+                    New!
+                </p>
+            )}
             <div className='flex justify-between text-slate-400 text-sm md:text-xs xl:text-sm'>
                 <p>Blog Post: {id}</p>
                 <p>{date}</p>
