@@ -9,7 +9,7 @@ export interface BlogPost {
 }
 
 async function getData() {
-    const res = await fetch('https://nova-bg.vercel.app/api/blogposts', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/blogposts`, {
         next: {
             revalidate: 0,
         },

@@ -12,11 +12,14 @@ export interface BlogPost {
 }
 
 async function getData(id: string) {
-    const res = await fetch(`https://nova-bg.vercel.app/api/blogposts/${id}`, {
-        next: {
-            revalidate: 0,
-        },
-    });
+    const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API}/api/blogposts/${id}`,
+        {
+            next: {
+                revalidate: 0,
+            },
+        }
+    );
     return res.json();
 }
 
