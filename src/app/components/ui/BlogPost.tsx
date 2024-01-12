@@ -1,27 +1,30 @@
 import Link from 'next/link';
 
-export default function BlogPost() {
+interface BlogPostProps {
+    id: number;
+    title: string;
+    body: string;
+    date: string;
+}
+
+export default function BlogPost({ id, title, body, date }: BlogPostProps) {
     return (
-        <div className='border border-slate-100 shadow-md rounded-md w-full md:max-w-[45%] lg:max-w-[25%] m-4'>
-            <div className='p-6 flex flex-col'>
-                <div className='flex justify-between text-slate-400 text-sm md:text-xs xl:text-sm'>
-                    <p>Blog Post 1</p>
-                    <p>December 28th, 2023</p>
-                </div>
-                <div className='py-4 text-slate-600'>
-                    <p className='font-bold'>End of 2023</p>
-                    <p className='text-sm text-slate-500 mb-2'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Sunt consectetur odit quibusdam incidunt eveniet
-                        perferendis expedita pariatur vero numquam quam?
-                    </p>
-                    <Link
-                        className='text-xs text-slate-400 hover:text-slate-500 transition-all'
-                        href='/blog/1'
-                    >
-                        Read More...
-                    </Link>
-                </div>
+        <div className='p-6 flex flex-col'>
+            <div className='flex justify-between text-slate-400 text-sm md:text-xs xl:text-sm'>
+                <p>Blog Post: {id}</p>
+                <p>{date}</p>
+            </div>
+            <div className='py-4 text-slate-600'>
+                <p className='font-bold'>{title}</p>
+                <p className='text-sm text-slate-500 mb-2'>
+                    {body.slice(0, 200)}
+                </p>
+                <Link
+                    className='text-xs text-slate-400 hover:text-slate-500 transition-all'
+                    href={`/blog/${id}`}
+                >
+                    Read More...
+                </Link>
             </div>
         </div>
     );
