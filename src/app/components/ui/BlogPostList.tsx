@@ -9,14 +9,12 @@ export interface BlogPost {
 }
 
 async function getData() {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/blogposts`, {
+    const res = await fetch(`http://localhost:4000/blogposts`, {
         next: {
             revalidate: 0,
         },
     });
-    const data = await res.json();
-    const blogposts = data.blogposts;
-    return blogposts;
+    return res.json();
 }
 
 export default async function BlogPostList() {

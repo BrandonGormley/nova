@@ -12,9 +12,8 @@ export interface BlogPost {
 }
 
 export async function generateStaticParams() {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/blogposts`);
-    const data = await res.json();
-    const blogposts = data.blogposts;
+    const res = await fetch(`http://localhost:4000/blogposts`);
+    const blogposts = await res.json();
 
     return blogposts.map((blogpost: BlogPost) => ({
         id: blogpost.id,
@@ -22,14 +21,11 @@ export async function generateStaticParams() {
 }
 
 async function getData(id: string) {
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API}/api/blogposts/${id}`,
-        {
-            next: {
-                revalidate: 0,
-            },
-        }
-    );
+    const res = await fetch(`http://localhost:4000/blogposts/${id}`, {
+        next: {
+            revalidate: 0,
+        },
+    });
     return res.json();
 }
 
