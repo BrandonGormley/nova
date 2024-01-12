@@ -1,4 +1,4 @@
-import BlogPost from '../components/ui/BlogPost';
+import BlogPostList from '../components/ui/BlogPostList';
 
 export default function Blog() {
     return (
@@ -7,9 +7,7 @@ export default function Blog() {
                 Latest Articles
             </h2>
             <section className='flex flex-wrap w-full justify-center'>
-                <BlogPost />
-                <BlogPost />
-                <BlogPost />
+                <BlogPostList />
             </section>
         </main>
     );
