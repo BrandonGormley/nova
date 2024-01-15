@@ -1,4 +1,9 @@
+import type { Metadata } from 'next';
 import BlogPostList from '../components/ui/BlogPostList';
+
+export const metadata: Metadata = {
+    title: 'Nova | Blog',
+};
 
 export default function Blog() {
     return (
