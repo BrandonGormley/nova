@@ -11,6 +11,13 @@ export interface BlogPost {
     date: string;
 }
 
+export async function generateMetadata({ params }: BlogPostProps) {
+    const data: BlogPost = await getData(params.id);
+    return {
+        title: `Nova | ${data.title}`,
+    };
+}
+
 export async function generateStaticParams() {
     const res = await fetch(`http://localhost:4000/blogposts`);
     const blogposts = await res.json();
