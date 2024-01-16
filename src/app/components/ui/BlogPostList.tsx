@@ -9,6 +9,8 @@ export interface BlogPost {
 }
 
 async function getData() {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     const res = await fetch(`http://localhost:4000/blogposts`, {
         next: {
             revalidate: 0,
