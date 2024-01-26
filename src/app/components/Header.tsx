@@ -9,7 +9,9 @@ export default function Header() {
                     src='/nova-logo.png'
                     width={125}
                     height={75}
-                    alt='Company  Logo'
+                    alt='Company Logo'
+                    quality={100}
+                    placeholder='blur'
                 />
             </Link>
             <nav className='flex w-full max-w-[125px] text-sm'>
