@@ -13,10 +13,10 @@ export default function Header() {
                 />
             </Link>
             <nav className='flex w-full max-w-[125px] text-sm'>
-                <ul className='flex flex-row items-center justify-between w-full font-medium'>
+                <ul className='flex flex-row items-center justify-between w-full font-medium text-gray-800 transition-all'>
                     <li>
                         <Link
-                            className='hover:underline underline-offset-4'
+                            className='hover:underline underline-offset-4 hover:text-gray-700'
                             href='/blog'
                         >
                             Blog
@@ -24,7 +24,7 @@ export default function Header() {
                     </li>
                     <li>
                         <Link
-                            className='hover:underline underline-offset-4'
+                            className='hover:underline underline-offset-4 hover:text-gray-700'
                             href='/about'
                         >
                             About
@@ -32,14 +32,14 @@ export default function Header() {
                     </li>
                     <li>
                         <Link
-                            className='hover:underline underline-offset-4'
+                            className='hover:underline underline-offset-4 hover:text-gray-700'
                             href='/login'
                         >
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 viewBox='0 0 24 24'
                                 fill='currentColor'
-                                className='w-6 h-6 text-slate-900 hover:text-slate-800 transition-all'
+                                className='w-6 h-6 text-gray-800 hover:text-gray-700 transition-all'
                             >
                                 <path
                                     fillRule='evenodd'
