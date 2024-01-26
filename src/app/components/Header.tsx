@@ -11,7 +11,6 @@ export default function Header() {
                     height={75}
                     alt='Company Logo'
                     quality={100}
-                    placeholder='blur'
                 />
             </Link>
             <nav className='flex w-full max-w-[125px] text-sm'>
