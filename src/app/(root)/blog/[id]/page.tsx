@@ -1,16 +1,10 @@
 import { notFound } from 'next/navigation';
+import { BlogPost } from '@/app/lib/definitions';
 
 interface BlogPostProps {
     params: {
         id: string;
     };
-}
-
-export interface BlogPost {
-    id: number;
-    title: string;
-    body: string;
-    date: string;
 }
 
 export async function generateMetadata({ params }: BlogPostProps) {
@@ -42,7 +36,7 @@ async function getData(id: string) {
     return res.json();
 }
 
-export default async function BlogPost({ params }: BlogPostProps) {
+export default async function BlogPostDetail({ params }: BlogPostProps) {
     const blogpost: BlogPost = await getData(params.id);
     return (
         <main className='min-h-screen flex-1 py-8 px-6 flex flex-col w-full max-w-[1440px] mx-auto'>
