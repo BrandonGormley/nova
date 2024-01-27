@@ -1,19 +1,12 @@
-import BlogPost from './BlogPost';
-
-export interface BlogPost {
-    id: number;
-    title: string;
-    body: string;
-    date: string;
-    recent: string;
-}
+import BlogPostCard from './BlogPostCard';
+import { BlogPost } from '@/app/lib/definitions';
 
 async function getData() {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     const res = await fetch(`http://localhost:4000/blogposts`, {
         next: {
-            revalidate: 0,
+            revalidate: 60,
         },
     });
     return res.json();
@@ -28,9 +21,10 @@ export default async function BlogPostList() {
                     className='border border-slate-100 shadow-md rounded-md m-4 w-full md:max-w-[45%] lg:max-w-[22%]'
                     key={blogpost.id}
                 >
-                    <BlogPost {...blogpost} />
+                    <BlogPostCard {...blogpost} />
                 </li>
             ))}
+            {blogposts.length === 0 && <p>No blog posts available</p>}
         </ul>
     );
 }
