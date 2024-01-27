@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import BlogPostList from '../../components/ui/BlogPostList';
+import BlogPostList from '@/app/components/ui/BlogPostList';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
 
