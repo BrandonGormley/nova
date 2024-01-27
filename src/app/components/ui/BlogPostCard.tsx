@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 interface BlogPostProps {
-    id: number;
+    id: string;
     title: string;
     body: string;
     date: string;
@@ -18,8 +18,8 @@ export default function BlogPost({
     return (
         <div className='p-6 flex flex-col relative'>
             {recent === 'true' && (
-                <p className='bg-green-200 absolute top-1 left-1 px-2 text-xs rounded border border-green-300 shadow'>
-                    New!
+                <p className='bg-green-200 text-green-600 absolute top-0 left-0 px-2 text-xs rounded-tl rounded-br border border-green-200 font-bold'>
+                    Latest!
                 </p>
             )}
             <div className='flex justify-between text-slate-400 text-sm md:text-xs xl:text-sm'>
