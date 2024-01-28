@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { BlogPost } from '@/app/lib/definitions';
 import { Suspense } from 'react';
 import { LoadingSpinner } from '@/app/components/ui/LoadingSkeletons';
+import { resolve } from 'path';
 
 interface BlogPostProps {
     params: {
@@ -27,6 +28,7 @@ export async function generateStaticParams() {
 }
 
 async function getData(id: string) {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     const res = await fetch(`http://localhost:4000/blogposts/${id}`, {
         next: {
             revalidate: 60,
