@@ -1,7 +1,3 @@
-export function LoadingSkeletons() {
-    return <div>LoadingSkeletons</div>;
-}
-
 export function LoadingSpinner() {
     return (
         <div
