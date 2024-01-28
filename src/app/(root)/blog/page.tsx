@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import BlogPostList from '@/app/components/ui/BlogPostList';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
+import BlogPostList from '@/app/components/ui/BlogPostList';
 
 export const metadata: Metadata = {
     title: 'Nova | Blog',
