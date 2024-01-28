@@ -4,18 +4,16 @@ export default function NotFound() {
     return (
         <div className='flex items-center justify-center h-screen bg-gray-100'>
             <div className='text-center'>
-                <h1 className='text-6xl font-bold text-secondary mb-4'>404</h1>
-                <p className='text-xl text-gray-700 mb-8'>
-                    Oops! Page not found.
-                </p>
+                <h1 className='text-6xl font-bold text-red-500 mb-4'>404</h1>
+                <p className='text-lg text-gray-800 mb-8'>Page Not Found</p>
                 <p className='text-gray-600'>
-                    The page you are looking for might be under construction.
+                    Looks like this page is in another castle...
                 </p>
                 <Link
-                    href='/'
-                    className='text-secondary hover:underline mt-4 block'
+                    className='my-4 block text-gray-800 hover:text-gray-600 transition-all'
+                    href={'/'}
                 >
-                    Go back to Home
+                    Back home
                 </Link>
             </div>
         </div>
