@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation';
 import { BlogPost } from '@/app/lib/definitions';
 import { Suspense } from 'react';
 import { LoadingSpinner } from '@/app/components/ui/LoadingSkeletons';
-import { resolve } from 'path';
 
 interface BlogPostProps {
     params: {
