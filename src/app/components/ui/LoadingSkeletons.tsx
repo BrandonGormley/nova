@@ -4,7 +4,7 @@ export function LoadingSpinner() {
             role='status'
             className='animate-pulse flex flex-col justify-center items-center'
         >
-            <p className='mb-8'>Loading blog posts...</p>
+            {' '}
             <svg
                 aria-hidden='true'
                 className='w-8 h-8 text-gray-200 animate-spin fill-primary'
