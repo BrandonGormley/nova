@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
-import Loading from '@/app/loading';
+import Loading from '@/app/(root)/blog/loading';
 import BlogPostList from '@/app/components/ui/BlogPostList';
 
 export const metadata: Metadata = {
