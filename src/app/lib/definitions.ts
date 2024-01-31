@@ -5,3 +5,5 @@ export type BlogPost = {
     date: string;
     recent: string;
 };
+
+export type BlogPostList = BlogPost[];
