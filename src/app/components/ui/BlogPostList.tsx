@@ -15,10 +15,10 @@ async function getData() {
 export default async function BlogPostList() {
     const blogposts: BlogPost[] = await getData();
     return (
-        <ul className='flex flex-wrap'>
+        <ul className='flex flex-wrap w-full'>
             {blogposts.map((blogpost) => (
                 <li
-                    className='border border-slate-100 shadow-md rounded-md m-4 w-full md:max-w-[45%] lg:max-w-[22%]'
+                    className='border border-slate-100 shadow-md rounded-md m-4 w-full max-w-[25%]'
                     key={blogpost.id}
                 >
                     <BlogPostCard {...blogpost} />

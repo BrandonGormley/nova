@@ -13,7 +13,7 @@ export default function Blog() {
             <h2 className='text-2xl font-bold mb-8 w-full mx-auto text-gray-800'>
                 All Articles
             </h2>
-            <section className='flex flex-wrap w-full justify-center'>
+            <section className='flex flex-wrap w-full'>
                 <Suspense fallback={<Loading />}>
                     <BlogPostList />
                 </Suspense>
