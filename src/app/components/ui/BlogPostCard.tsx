@@ -5,7 +5,7 @@ interface BlogPostProps {
     title: string;
     body: string;
     date: string;
-    recent: string;
+    recent?: string;
 }
 
 export default function BlogPost({
@@ -23,7 +23,6 @@ export default function BlogPost({
                 </p>
             )}
             <div className='flex justify-between text-slate-400 text-sm md:text-xs xl:text-sm'>
-                <p>Blog Post: {id}</p>
                 <p>{date}</p>
             </div>
             <div className='py-4 text-slate-600'>

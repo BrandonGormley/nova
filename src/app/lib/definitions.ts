@@ -3,7 +3,7 @@ export type BlogPost = {
     title: string;
     body: string;
     date: string;
-    recent: string;
+    recent?: string;
 };
 
 export type BlogPostList = BlogPost[];
