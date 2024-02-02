@@ -1,19 +1,12 @@
-'use client';
 import { FormEvent, useState } from 'react';
 
-export default function SignUpForm() {
+interface SignUpFormProps {
+    handleSubmit: (e: FormEvent, email: string, password: string) => void;
+}
+
+export default function SignUpForm({ handleSubmit }: SignUpFormProps) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    const handleSubmit = async (
-        e: FormEvent,
-        email: string,
-        password: string
-    ) => {
-        e.preventDefault();
-
-        console.log(`Signup: ${email} ${password}`);
-    };
 
     return (
         <form
@@ -24,7 +17,7 @@ export default function SignUpForm() {
                 <span className='my-2'>Email:</span>
                 <input
                     className='rounded py-1 outline-gray-400 border-none pl-2'
-                    type='text'
+                    type='email'
                     required
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
@@ -34,7 +27,7 @@ export default function SignUpForm() {
                 <span className='my-2'>Password:</span>
                 <input
                     className='rounded py-1 outline-gray-400 border-none pl-2'
-                    type='text'
+                    type='password'
                     required
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
