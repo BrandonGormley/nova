@@ -1,7 +1,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
 
-export default function AuthHeader() {
+export default async function AuthHeader() {
+    const supabase = createServerComponentClient({ cookies });
+    const { data } = await supabase.auth.getSession();
+
+    if (data.session) {
+        redirect('/');
+    }
+
     return (
         <header className='flex flex-row p-4 py-8 lg:p-8 w-full justify-between max-w-[1440px] mx-auto'>
             <Link href='/'>
