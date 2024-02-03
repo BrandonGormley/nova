@@ -1,9 +1,8 @@
 'use client';
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
-import { createClient } from '@/app/utils/supabase/client';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import SignUpForm from '@/app/components/ui/SignUpForm';
-import { FormEvent } from 'react';
 
 export default function SignupPage() {
     const router = useRouter();
@@ -16,7 +15,7 @@ export default function SignupPage() {
     ) => {
         e.preventDefault();
 
-        const supabase = createClient();
+        const supabase = createClientComponentClient();
         const { error } = await supabase.auth.signUp({
             email,
             password,
@@ -40,7 +39,11 @@ export default function SignupPage() {
                 Sign Up
             </h2>
             <SignUpForm handleSubmit={handleSubmit} />
-            {formError && <div className='text-red'>{formError}</div>}
+            {formError && (
+                <div className='text-red-400 font-bold text-center my-4 text-xs'>
+                    {formError}
+                </div>
+            )}
         </main>
     );
 }
