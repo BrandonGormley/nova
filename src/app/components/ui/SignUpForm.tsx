@@ -33,7 +33,7 @@ export default function SignUpForm({ handleSubmit }: SignUpFormProps) {
                     value={password}
                 />
             </label>
-            <button className='bg-secondary text-white rounded-md text-center px-4 py-2 w-full mx-auto lg:max-w-[33%] my-4'>
+            <button className='bg-secondary hover:bg-secondary-light transition-all text-white rounded-md text-center px-4 py-2 w-full mx-auto lg:max-w-[33%] my-4'>
                 Sign Up
             </button>
         </form>

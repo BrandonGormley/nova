@@ -70,7 +70,7 @@ export default function CreateBlogPostForm() {
                 ></textarea>
             </label>
             <button
-                className='bg-secondary text-white rounded-md text-center px-4 py-2 w-full mx-auto max-w-[33%] my-4'
+                className='bg-secondary text-white rounded-md text-center px-4 py-2 w-full mx-auto max-w-[33%] my-4  hover:bg-secondary-light transition-all'
                 disabled={isLoading}
             >
                 {isLoading && 'Adding...'}
