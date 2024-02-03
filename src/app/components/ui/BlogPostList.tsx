@@ -2,8 +2,6 @@ import BlogPostCard from './BlogPostCard';
 import { BlogPost } from '@/app/lib/definitions';
 
 async function getData() {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
     const res = await fetch(`http://localhost:4000/blogposts`, {
         next: {
             revalidate: 60,
@@ -15,10 +13,10 @@ async function getData() {
 export default async function BlogPostList() {
     const blogposts: BlogPost[] = await getData();
     return (
-        <ul className='flex flex-wrap w-full'>
+        <ul className='flex flex-wrap w-full justify-center'>
             {blogposts.map((blogpost) => (
                 <li
-                    className='border border-slate-100 shadow-md rounded-md m-4 w-full max-w-[25%]'
+                    className='border border-slate-100 shadow-md rounded-md m-4 w-full md:max-w-[40%] lg:max-w-[25%]'
                     key={blogpost.id}
                 >
                     <BlogPostCard {...blogpost} />

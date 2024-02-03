@@ -27,7 +27,6 @@ export async function generateStaticParams() {
 }
 
 async function getData(id: string) {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
     const res = await fetch(`http://localhost:4000/blogposts/${id}`, {
         next: {
             revalidate: 60,
