@@ -1,19 +1,12 @@
-'use client';
 import { FormEvent, useState } from 'react';
 
-export default function LoginForm() {
+interface LogInFormProps {
+    handleSubmit: (e: FormEvent, email: string, password: string) => void;
+}
+
+export default function LoginForm({ handleSubmit }: LogInFormProps) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    const handleSubmit = async (
-        e: FormEvent,
-        email: string,
-        password: string
-    ) => {
-        e.preventDefault();
-
-        console.log(`Login: ${email} ${password}`);
-    };
 
     return (
         <form
@@ -34,13 +27,13 @@ export default function LoginForm() {
                 <span className='my-2'>Password:</span>
                 <input
                     className='rounded py-1 outline-gray-400 border-none pl-2'
-                    type='text'
+                    type='password'
                     required
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
                 />
             </label>
-            <button className='bg-secondary text-white rounded-md text-center px-4 py-2 w-full mx-auto max-w-[33%] my-4'>
+            <button className='bg-secondary hover:bg-secondary-light transition-all text-white rounded-md text-center px-4 py-2 w-full mx-auto max-w-[33%] my-4'>
                 Login
             </button>
         </form>
