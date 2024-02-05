@@ -21,7 +21,7 @@ export default function CreateBlogPostForm() {
             date,
         };
 
-        const res = await fetch('http://localhost:4000/blogposts', {
+        const res = await fetch('/api/blogposts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -29,9 +29,15 @@ export default function CreateBlogPostForm() {
             body: JSON.stringify(blogPost),
         });
 
-        if (res.status === 201) {
-            router.refresh();
+        const data = await res.json();
+
+        if (data.error) {
+            console.log(data.error.message);
+        }
+
+        if (data.data) {
             router.push('/blog');
+            router.refresh();
         }
     };
 
