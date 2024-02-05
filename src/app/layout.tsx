@@ -9,6 +9,15 @@ export const metadata: Metadata = {
     title: 'Welcome to Nova',
     description:
         'Welcome to Nova, a captivating space where words come alive. Explore insightful articles, personal stories, and engaging content that reflect my journey and passions. Join me on this immersive blog as we delve into topics ranging from lifestyle, travel, tech, and more. Lets embark on a journey of discovery together at Nova.',
+    openGraph: {
+        title: 'Welcome to Nova',
+        description:
+            'Welcome to Nova, a captivating space where words come alive. Explore insightful articles, personal stories, and engaging content that reflect my journey and passions. Join me on this immersive blog as we delve into topics ranging from lifestyle, travel, tech, and more. Lets embark on a journey of discovery together at Nova.',
+        url: 'https://nova-bg.vercel.app/',
+        siteName: 'Nova',
+        locale: 'en_US',
+        type: 'website',
+    },
 };
 
 export default function RootLayout({
