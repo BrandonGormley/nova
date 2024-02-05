@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import { BlogPost } from '@/app/lib/definitions';
 import { Suspense } from 'react';
 import { LoadingSpinner } from '@/app/components/ui/LoadingSkeletons';
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
+import { cookies } from 'next/headers';
 
 interface BlogPostProps {
     params: {
@@ -10,33 +12,40 @@ interface BlogPostProps {
 }
 
 export async function generateMetadata({ params }: BlogPostProps) {
-    const data: BlogPost = await getData(params.id);
+    const supabase = createServerComponentClient({ cookies });
+    const { data: blogpost, error } = await supabase
+        .from('blogposts')
+        .select()
+        .eq('id', params.id)
+        .single();
+
     return {
-        title: `Nova | ${data.title}`,
-        description: `${data.body.slice(0, 155)}`,
+        title: `Nova | ${blogpost?.title || 'Blogpost not found'}`,
     };
 }
 
-export async function generateStaticParams() {
-    const res = await fetch(`http://localhost:4000/blogposts`);
-    const blogposts = await res.json();
+// Statically Builds pages ahead of time
+// export async function generateStaticParams() {
+//     const res = await fetch(`http://localhost:4000/blogposts`);
+//     const blogposts = await res.json();
 
-    return blogposts.map((blogpost: BlogPost) => ({
-        id: blogpost.id,
-    }));
-}
+//     return blogposts.map((blogpost: BlogPost) => ({
+//         id: blogpost.id,
+//     }));
+// }
 
 async function getData(id: string) {
-    const res = await fetch(`http://localhost:4000/blogposts/${id}`, {
-        next: {
-            revalidate: 60,
-        },
-    });
+    const supabase = createServerComponentClient({ cookies });
+    const { data } = await supabase
+        .from('blogposts')
+        .select()
+        .eq('id', id)
+        .single();
 
-    if (!res.ok) {
+    if (!data) {
         notFound();
     }
-    return res.json();
+    return data;
 }
 
 export default async function BlogPostDetail({ params }: BlogPostProps) {
