@@ -2,12 +2,13 @@ import { NextResponse } from 'next/server';
 
 interface BlogPostProps {
     params: {
-        id?: string;
+        id?: string | undefined;
     };
 }
 
-export async function GET({ params }: BlogPostProps) {
-    const res = await fetch(`http://localhost:4000/blogposts/${params.id}`);
+// @ts-ignore
+export async function GET(request: Request, { params }: BlogPostProps) {
+    const res = await fetch(`/blogposts/${params.id}`);
     const blogpost = await res.json();
 
     if (!res.ok) {
