@@ -3,6 +3,8 @@ import './globals.css';
 import Footer from '@/app/components/Footer';
 import { rubik } from '@/app/lib/fonts';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
     title: 'Welcome to Nova',
     description:
