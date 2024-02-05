@@ -11,7 +11,7 @@ export default function LoginForm({ handleSubmit }: LogInFormProps) {
     return (
         <form
             onSubmit={(e) => handleSubmit(e, email, password)}
-            className='w-1/3 mx-auto flex flex-col bg-gray-100 rounded-lg p-8'
+            className='w-full lg:w-1/3 mx-auto flex flex-col bg-gray-100 rounded-lg p-8'
         >
             <label className='flex flex-col text-gray-600'>
                 <span className='my-2'>Email:</span>
