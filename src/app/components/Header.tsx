@@ -45,7 +45,7 @@ export default function Header({ user }: HeaderProps) {
                         <li>
                             <Link
                                 className='hover:underline underline-offset-4 hover:text-gray-700'
-                                href='/login'
+                                href='/signup'
                             >
                                 <svg
                                     xmlns='http://www.w3.org/2000/svg'
