@@ -1,26 +1,24 @@
+import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
 import { NextResponse } from 'next/server';
-
-export async function GET(request: Request) {
-    const res = await fetch(`http://localhost:4000/blogposts`);
-    const blogposts = await res.json();
-
-    return NextResponse.json(blogposts, {
-        status: 200,
-    });
-}
+import { cookies } from 'next/headers';
 
 export async function POST(request: Request) {
     const blogpost = await request.json();
 
-    const res = await fetch('http://localhost:4000/blogposts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(blogpost),
-    });
+    // Get supabase instance
+    const supabase = createRouteHandlerClient({ cookies });
 
-    const newBlogPost = await res.json();
+    // Get current user session
+    const {
+        data: { session },
+    } = await supabase.auth.getSession();
 
-    return NextResponse.json(newBlogPost, {
-        status: 201,
-    });
+    // Insert data into supabase
+    const { data, error } = await supabase
+        .from('blogposts')
+        .insert({ ...blogpost })
+        .select()
+        .single();
+
+    return NextResponse.json({ data, error });
 }
