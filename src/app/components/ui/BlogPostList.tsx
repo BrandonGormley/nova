@@ -17,6 +17,7 @@ async function getData() {
 
 export default async function BlogPostList() {
     const blogposts: BlogPost[] | null = await getData();
+
     return (
         <ul className='flex flex-wrap w-full justify-center'>
             {blogposts &&
