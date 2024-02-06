@@ -1,3 +1,5 @@
+import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
+import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 
 interface BlogPostProps {
@@ -6,23 +8,13 @@ interface BlogPostProps {
     };
 }
 
-// @ts-ignore
-export async function GET(request: Request, { params }: BlogPostProps) {
-    const res = await fetch(`/blogposts/${params.id}`);
-    const blogpost = await res.json();
+export async function DELETE(request: Request, { params }: BlogPostProps) {
+    const id = params.id;
+    console.log(id);
 
-    if (!res.ok) {
-        return NextResponse.json(
-            {
-                error: 'Can not find the blog post, sorry :(',
-            },
-            {
-                status: 404,
-            }
-        );
-    }
+    const supabase = createRouteHandlerClient({ cookies });
 
-    return NextResponse.json(blogpost, {
-        status: 200,
-    });
+    const { error } = await supabase.from('blogposts').delete().eq('id', id);
+
+    return NextResponse.json({ error });
 }
