@@ -1,4 +1,7 @@
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
+import { cookies } from 'next/headers';
 import Link from 'next/link';
+import DeleteButton from './DeleteButton';
 
 interface BlogPostProps {
     id: string;
@@ -8,20 +11,20 @@ interface BlogPostProps {
     recent?: string;
 }
 
-export default function BlogPost({
+export default async function BlogPost({
     id,
     title,
     body,
     date,
     recent,
 }: BlogPostProps) {
+    const supabase = createServerComponentClient({ cookies });
+    const data = await supabase.auth.getSession();
+    console.log(data);
+
     return (
         <div className='p-6 flex flex-col relative'>
-            {recent === 'true' && (
-                <p className='bg-green-200 text-green-600 absolute top-0 left-0 px-2 text-xs rounded-tl rounded-br border border-green-200 font-bold'>
-                    Latest!
-                </p>
-            )}
+            {data.data.session && <DeleteButton id={id} />}
             <div className='flex justify-between text-slate-400 text-sm md:text-xs xl:text-sm'>
                 <p>{date}</p>
             </div>
