@@ -50,6 +50,7 @@ async function getData(id: string) {
 
 export default async function BlogPostDetail({ params }: BlogPostProps) {
     const blogpost: BlogPost = await getData(params.id);
+
     return (
         <main className='min-h-screen flex-1 py-8 px-6 flex flex-col w-full max-w-[1440px] mx-auto'>
             <Suspense fallback={<LoadingSpinner />}>
