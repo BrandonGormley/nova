@@ -44,7 +44,7 @@ export default function CreateBlogPostForm() {
     return (
         <form
             onSubmit={handleSubmit}
-            className='w-1/2 mx-auto flex flex-col bg-gray-100 rounded-lg p-8'
+            className='w-full lg:w-1/3 mx-auto flex flex-col bg-gray-100 rounded-lg p-8'
         >
             <label className='flex flex-col text-gray-600'>
                 <span className='my-2'>Date:</span>
@@ -76,7 +76,7 @@ export default function CreateBlogPostForm() {
                 ></textarea>
             </label>
             <button
-                className='bg-secondary text-white rounded-md text-center px-4 py-2 w-full mx-auto max-w-[33%] my-4  hover:bg-secondary-light transition-all'
+                className='bg-secondary text-white rounded-md text-center px-4 py-2 w-full mx-auto  my-4 hover:bg-secondary-light transition-all'
                 disabled={isLoading}
             >
                 {isLoading && 'Adding...'}
