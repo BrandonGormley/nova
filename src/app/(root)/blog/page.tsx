@@ -13,7 +13,7 @@ export default function Blog() {
         <main className='flex-1 py-8 px-6 flex flex-col min-h-screen w-full max-w-[1440px] mx-auto'>
             <div className='flex justify-start items-center mb-4'>
                 <h2 className='text-2xl font-bold text-gray-800 ml-4'>
-                    All Articles
+                    All Posts
                 </h2>
                 <Link
                     className='bg-secondary hover:bg-secondary-light transition-all text-white rounded-md text-xs px-2 py-1 text-center ml-4'
