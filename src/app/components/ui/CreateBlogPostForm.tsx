@@ -8,6 +8,7 @@ export default function CreateBlogPostForm() {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [date, setDate] = useState('');
+    const [createdBy, setCreatedBy] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e: FormEvent) => {
@@ -19,6 +20,7 @@ export default function CreateBlogPostForm() {
             title,
             body,
             date,
+            createdBy,
         };
 
         const res = await fetch('/api/blogposts', {
@@ -74,6 +76,16 @@ export default function CreateBlogPostForm() {
                     onChange={(e) => setBody(e.target.value)}
                     value={body}
                 ></textarea>
+            </label>
+            <label className='flex flex-col text-gray-600'>
+                <span className='my-2'>Created By:</span>
+                <input
+                    className='rounded py-1 outline-gray-400 border-none pl-2'
+                    required
+                    type='text'
+                    onChange={(e) => setCreatedBy(e.target.value)}
+                    value={createdBy}
+                ></input>
             </label>
             <button
                 className='bg-secondary text-white rounded-md text-center px-4 py-2 w-full mx-auto  my-4 hover:bg-secondary-light transition-all'
