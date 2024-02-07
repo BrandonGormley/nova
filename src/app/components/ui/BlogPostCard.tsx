@@ -8,7 +8,7 @@ interface BlogPostProps {
     title: string;
     body: string;
     date: string;
-    recent?: string;
+    createdBy: string;
 }
 
 export default async function BlogPost({
@@ -16,17 +16,17 @@ export default async function BlogPost({
     title,
     body,
     date,
-    recent,
+    createdBy,
 }: BlogPostProps) {
     const supabase = createServerComponentClient({ cookies });
     const data = await supabase.auth.getSession();
-    console.log(data);
 
     return (
         <div className='p-6 flex flex-col relative'>
             {data.data.session && <DeleteButton id={id} />}
             <div className='flex justify-between text-slate-400 text-sm md:text-xs xl:text-sm'>
                 <p>{date}</p>
+                <p>{createdBy}</p>
             </div>
             <div className='py-4 text-slate-600'>
                 <p className='font-bold'>{title}</p>
