@@ -2,12 +2,12 @@ export function LoadingSpinner() {
     return (
         <div
             role='status'
-            className='animate-pulse flex flex-col justify-center items-center'
+            className='animate-pulse flex flex-col justify-center items-center mx-auto w-full min-h-screen'
         >
             {' '}
             <svg
                 aria-hidden='true'
-                className='w-8 h-8 text-gray-200 animate-spin fill-primary'
+                className='w-8 h-8 text-gray-200 animate-spin fill-secondary'
                 viewBox='0 0 100 101'
                 fill='none'
                 xmlns='http://www.w3.org/2000/svg'
