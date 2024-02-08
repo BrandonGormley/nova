@@ -2,7 +2,7 @@
 import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
-import LoginForm from '@/app/components/ui/LoginForm';
+import LoginForm from '@/app/components/ui/auth/LoginForm';
 
 export default function LoginPage() {
     const router = useRouter();

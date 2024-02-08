@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { BlogPost } from '@/app/lib/definitions';
 import { Suspense } from 'react';
-import { LoadingSpinner } from '@/app/components/ui/LoadingSkeletons';
+import { LoadingSpinner } from '@/app/components/ui/loaders/LoadingSkeletons';
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
 

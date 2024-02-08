@@ -2,7 +2,7 @@
 import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
-import SignUpForm from '@/app/components/ui/SignUpForm';
+import SignUpForm from '@/app/components/ui/auth/SignUpForm';
 
 export default function SignupPage() {
     const router = useRouter();

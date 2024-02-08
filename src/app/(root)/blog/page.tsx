@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import Loading from '@/app/(root)/blog/loading';
-import BlogPostList from '@/app/components/ui/BlogPostList';
+import BlogPostList from '@/app/components/ui/blog/BlogPostList';
 import Link from 'next/link';
 
 export const metadata: Metadata = {

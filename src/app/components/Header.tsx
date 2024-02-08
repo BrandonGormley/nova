@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import LogoutButton from './ui/LogoutButton';
+import LogoutButton from '@/app/components/ui/buttons/LogoutButton';
 
 interface HeaderProps {
     user: any;

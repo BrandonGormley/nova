@@ -1,4 +1,4 @@
-import CreateBlogPostForm from '@/app/components/ui/CreateBlogPostForm';
+import CreateBlogPostForm from '@/app/components/ui/blog/CreateBlogPostForm';
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';

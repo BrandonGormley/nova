@@ -1,7 +1,7 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
 import Link from 'next/link';
-import DeleteButton from './DeleteButton';
+import DeleteButton from '../buttons/DeleteButton';
 
 interface BlogPostProps {
     id: string;
