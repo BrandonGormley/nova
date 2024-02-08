@@ -19,7 +19,7 @@ export default async function BlogPostList() {
     const blogposts: BlogPost[] | null = await getData();
 
     return (
-        <ul className='flex flex-wrap w-full justify-center'>
+        <ul className='flex flex-wrap w-full justify-start mt-16'>
             {blogposts &&
                 blogposts.map((blogpost) => (
                     <li
