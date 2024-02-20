@@ -1,5 +1,5 @@
 <a href="https://nova-bg.vercel.app/">
-  <img alt="Nova" align="center" src="">
+  <img alt="Nova" align="center" src="https://nova-bg.vercel.app/readmebanner.jpg">
   <h1 align="center">Nova</h1>
 </a>
 
